@@ -28,7 +28,7 @@ class ExaBGP(Container):
 FROM ubuntu:latest
 WORKDIR /root
 RUN apt-get update && apt-get install -qy git python python-setuptools gcc python-dev
-RUN easy_install pip
+RUN apt-get install -yq python-pip
 RUN git clone https://github.com/Exa-Networks/exabgp && \
 (cd exabgp && git checkout {0} && pip install six && pip install -r requirements.txt && python setup.py install)
 RUN ln -s /root/exabgp /exabgp
@@ -49,7 +49,7 @@ class ExaBGP_MRTParse(Container):
 FROM ubuntu:latest
 WORKDIR /root
 RUN apt-get update && apt-get install -qy git python python-setuptools gcc python-dev
-RUN easy_install pip
+RUN apt-get install -yq python-pip
 RUN git clone https://github.com/Exa-Networks/exabgp && \
 (cd exabgp && git checkout {0} && pip install six && pip install -r requirements.txt && python setup.py install)
 RUN ln -s /root/exabgp /exabgp
