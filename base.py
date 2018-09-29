@@ -145,7 +145,6 @@ class Container(object):
         dckr.start(container=self.name)
 
         if len(ipv4_addresses) > 1:
-
             # get the interface used by the first IP address already added by Docker
             dev = None
             res = self.local('ip addr')
